@@ -71,6 +71,10 @@ public class MemberAdapter extends BaseAdapter{
         } else {
             holder = (ViewHolder) v.getTag();
         }
+        holder.ivPhoto.setImageResource(photos[i]);
+        holder.tvName.setText(list.get(i).getName());
+        holder.tvPhone.setText(list.get(i).getPhone());
+
         return v;
     }
     //inner class

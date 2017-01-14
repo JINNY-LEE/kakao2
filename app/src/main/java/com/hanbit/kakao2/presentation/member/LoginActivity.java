@@ -61,14 +61,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 boolean flag = service.login(member);
                 if(flag){
                     Toast.makeText(LoginActivity.this,"Login Success",Toast.LENGTH_LONG).show();
+                    this.startActivity(new Intent(LoginActivity.this, MemberListActivity.class));
                 } else {
                     Toast.makeText(LoginActivity.this,"Login Fail",Toast.LENGTH_LONG).show();
-                    this.startActivity(new Intent(LoginActivity.this, com.hanbit.kakao2.presentation.member.MemberListActivity.class));
                 }
 
                 break;
             case R.id.btCancel:
-                this.startActivity(new Intent(LoginActivity.this, com.hanbit.kakao2.presentation.member.MemberListActivity.class));
+                this.startActivity(new Intent(LoginActivity.this, MemberListActivity.class));
 
                 break;
 

@@ -29,7 +29,10 @@ public class MemberServiceImp implements MemberService {
 
     @Override
     public ArrayList<MemberBean> list() {
-        return null;
+
+        return dao.selectAll();
+
+
     }
 
     @Override
@@ -39,7 +42,7 @@ public class MemberServiceImp implements MemberService {
 
     @Override
     public MemberBean searchById(String id) {
-        return null;
+        return dao.selectById(id);
     }
 
     @Override
@@ -62,11 +65,14 @@ public class MemberServiceImp implements MemberService {
 
     @Override
     public void modify(MemberBean param) {
+        dao.update(param);
+
 
     }
 
     @Override
     public void unregister(String id) {
+        dao.delete(id);
 
     }
 }
