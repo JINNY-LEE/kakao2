@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcec1d">
+
+    <!--Activity와 연동되지 않는 xml의 기술-->
+
+    <TextView
+        android:id="@+id/menu_home"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="KAKAO"
+        android:textSize="23dp"
+        android:textColor="#131313"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:textSize="14dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="#fcec1d"
+        />
+    <Button
+        android:id="@+id/menu_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KAKAO STORY"
+        android:textSize="14dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:background="#fcec1d"
+        />
+
+
+</RelativeLayout>

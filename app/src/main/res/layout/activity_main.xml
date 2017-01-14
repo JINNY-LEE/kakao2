@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#fcec1d"
+    android:weightSum="10"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="8"
+        android:src="@drawable/kakao_background"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KAKAO MAIN"
+        android:textSize="30dp"
+        android:paddingBottom="30dp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:textSize="30dp"
+        android:background="#fcec1d"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
