@@ -22,8 +22,8 @@ public class MemberDAO extends SQLiteOpenHelper {
 
     public MemberDAO(Context applicationContext) {
 
-       super(applicationContext,"hanbit.db",null,1);
-       this.getWritableDatabase();
+        super(applicationContext,"hanbit.db",null,1);
+        this.getWritableDatabase();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MemberDAO extends SQLiteOpenHelper {
                 "    )\n");
         //객체를 만듦
 
-       db.execSQL("\n" +
+        db.execSQL("\n" +
                 "insert into Member( id, pw, name, email, phone, photo, address )\n" +
                 "values('hong','1','홍길동','hong@test.com','010-3313-0113','default.jpg','서울')\n");
         db.execSQL("\n" +
@@ -88,25 +88,10 @@ public class MemberDAO extends SQLiteOpenHelper {
     }
     public ArrayList<MemberBean> selectAll(){ // readAll
         ArrayList<MemberBean> list = new ArrayList<MemberBean>();
-        String sql = "select id, pw, name, email, phone, photo, address from Member";
+        String sql = "";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
-        if ( cursor != null){
-            Log.d("Member Exists","");
-            cursor.moveToNext();
-        }
-        do {
-           MemberBean member = new MemberBean();
-            member.setId(cursor.getString(0));
-            member.setPw(cursor.getString(1));
-            member.setName(cursor.getString(2));
-            member.setEmail(cursor.getString(3));
-            member.setPhone(cursor.getString(4));
-            member.setPhoto(cursor.getString(5));
-            member.setAddress(cursor.getString(6));
-            list.add(member);
-        } while (cursor.moveToNext());
-        Log.d("Member Number",String.valueOf(list.size()));
+
 
         return list;
 
@@ -122,24 +107,10 @@ public class MemberDAO extends SQLiteOpenHelper {
     }
     public MemberBean selectById(String id){ //readOne
         MemberBean member = new MemberBean();
-        String sql = "select id, pw, name, email, phone, photo, address from Member where id = '"+id+"'";
-        Log.d("login SQL:",sql);
+        String sql = "";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
-        if(cursor.moveToNext()){
-            member.setId(cursor.getString(0));
-            member.setPw(cursor.getString(1));
-            member.setName(cursor.getString(2));
-            member.setEmail(cursor.getString(3));
-            member.setPhone(cursor.getString(4));
-            member.setPhoto(cursor.getString(5));
-            member.setAddress(cursor.getString(6));
-        } else{
-            member.setId("fail");
-        }
 
-        Log.d("login result:",member.getId());
-        Log.d("login name:",member.getName());
         return member;
     }
 
@@ -176,19 +147,15 @@ public class MemberDAO extends SQLiteOpenHelper {
 
     }
     public void update(MemberBean param) { // updateMember
-        String sql = "update Member set pw ='"+param.getId()+"', \n" +
-                "\t\t  name = '"+param.getName()+"', \n" +
-                "\t\t  phone = '"+param.getPhone()+"',\n" +
-                "                  address = '"+param.getAddress()+"'\n" +
-                "\n" +
-                "where id = '"+param.getId()+"'";
+        String sql = "";
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(sql);
         db.close();
-    }
 
+
+    }
     public void delete(String id) { //updateMember
-        String sql = "delete from Member where id = '"+id+"'";
+        String sql = "";
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(sql);
         db.close();

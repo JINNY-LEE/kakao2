@@ -61,10 +61,10 @@ public class ModifyMemberActivity extends AppCompatActivity implements View.OnCl
             case R.id.btSubmit:
                 MemberBean temp = new MemberBean();
                 temp.setId(tvID.getText().toString());
-                temp.setPw((etPass.getText().toString()==null)?member.getPw():etPass.getText().toString());
-                temp.setName((etName.getText().toString()==null)?member.getName():etName.getText().toString());
-                temp.setAddress((etAddr.getText().toString()==null)?member.getAddress():etAddr.getText().toString());
-                temp.setPhone((etTel.getText().toString()==null)?member.getPhone():etAddr.getText().toString());
+                temp.setPw((etPass.getText().toString().equals(""))?member.getPw():etPass.getText().toString());
+                temp.setName((etName.getText().toString().equals(""))?member.getName():etName.getText().toString());
+                temp.setAddress((etAddr.getText().toString().equals(""))?member.getAddress():etAddr.getText().toString());
+                temp.setPhone((etTel.getText().toString().equals(""))?member.getPhone():etAddr.getText().toString());
                 service.modify(temp);
                 break;
             case R.id.btCancel:

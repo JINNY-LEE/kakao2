@@ -73,6 +73,9 @@ public class MemberDetailActivity extends AppCompatActivity implements View.OnCl
             break;
 
             case R.id.btMap :
+                Intent intent3 = new Intent(MemberDetailActivity.this,MapsActivity.class);
+                member.setAddress("37.5662950,126.9779450");
+                intent3.putExtra("position",member.getAddress());
             break;
 
             case R.id.btMessage :
